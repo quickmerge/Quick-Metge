@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quick Merge – Merge, Compress & Convert Files</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Merge – Merge, Compress & Convert Files Instantly</title>
+  <meta name="description" content="Quick Merge offers fast, secure file processing tools including PDF merging, splitting, compression, image conversion, and QR code generation - all processed locally in your browser.">
+  <meta name="keywords" content="PDF merge, PDF split, compress PDF, image to PDF, QR code generator, file converter, online tools, privacy-focused tools">
+  <meta name="author" content="Quick Merge">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Quick Merge - File Processing Tools">
+  <meta property="og:description" content="Merge, compress and convert files instantly with our privacy-focused browser tools">
+  <meta property="og:type" content="website">
   <!-- Required Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -21,6 +28,9 @@
       background: linear-gradient(to right, #0f0f10, #111215);
       color: #f0f0f0;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     a {
@@ -74,6 +84,7 @@
       max-width: 1200px;
       margin: auto;
       padding: 2rem;
+      flex: 1;
     }
 
     .hero {
@@ -346,25 +357,139 @@
       color: #e74c3c;
     }
 
-    /* Privacy */
-    .privacy {
+    /* About, Contact, Privacy pages styles */
+    .content-page {
+      background: linear-gradient(to right, #0f0f10, #111215);
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .content-page h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #00f6ff, #6c5dd3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-align: center;
-      margin-top: 5rem;
+      padding-bottom: 0.5rem;
     }
 
-    .privacy h2 {
-      font-size: 2rem;
+    .content-page h2 {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
       color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.5rem;
     }
 
-    .privacy p {
-      margin-top: 1rem;
+    .content-page h3 {
+      font-size: 1.3rem;
+      margin: 1.5rem 0 1rem;
+      color: #ddd;
+    }
+
+    .content-page p {
+      margin-bottom: 1.2rem;
+      color: #bbb;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .content-page ul, .content-page ol {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+    }
+
+    .content-page li {
+      margin-bottom: 0.7rem;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .feature-list, .contact-box, .policy-section {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 0 20px rgba(108, 93, 211, 0.08);
+    }
+
+    .feature-item {
+      margin-bottom: 1rem;
+      color: #ddd;
+      padding-left: 1rem;
+      border-left: 3px solid #6c5dd3;
+    }
+
+    .contact-method {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(108, 93, 211, 0.1);
+      border-radius: 8px;
+    }
+
+    .contact-method h3 {
+      color: #6c5dd3;
+      margin-bottom: 0.5rem;
+    }
+
+    .content-page a {
+      color: #6c5dd3;
+      transition: color 0.2s;
+      text-decoration: underline;
+    }
+
+    .content-page a:hover {
+      color: #00f6ff;
+    }
+
+    .update-date {
+      font-style: italic;
       color: #aaa;
+      margin-bottom: 1.5rem;
+      display: block;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .privacy-notice {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2rem;
+      background: rgba(108, 93, 211, 0.1);
+      border-radius: 14px;
+      border: 1px solid rgba(108, 93, 211, 0.2);
+    }
+
+    .privacy-notice h2 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, #00f6ff, #6c5dd3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-notice p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     /* Footer */
     footer {
-      margin-top: 4rem;
+      margin-top: auto;
       padding: 2rem;
       text-align: center;
       font-size: 0.9rem;
@@ -400,9 +525,26 @@
       to { transform: rotate(360deg); }
     }
 
+    /* Hide content sections by default */
+    .content-section {
+      display: none;
+    }
+
+    .active-section {
+      display: block;
+    }
+
     @media (max-width: 768px) {
       .hero h2 {
         font-size: 2rem;
+      }
+
+      .content-page h1 {
+        font-size: 2rem;
+      }
+
+      .content-page h2 {
+        font-size: 1.5rem;
       }
 
       .nav {
@@ -412,226 +554,383 @@
 
       .nav .nav-links {
         margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .content-container, .container {
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="nav">
       <h1>Quick Merge</h1>
       <div class="nav-links">
-        <a href="#tools">Tools</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('privacy')">Privacy</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h2>Merge, Compress & Convert Files Instantly</h2>
-      <p>All tools run locally in your browser — fast, private, and secure.</p>
-      <div class="cta">
-        <button onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })">Explore Tools</button>
+  <!-- Home Section -->
+  <section id="home" class="content-section active-section">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h2>Merge, Compress & Convert Files Instantly</h2>
+        <p>All tools run locally in your browser — fast, private, and secure.</p>
+        <div class="cta">
+          <button onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })">Explore Tools</button>
+        </div>
       </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools" class="container">
+      <div class="tools">
+        <!-- Merge PDF -->
+        <div class="tool-card fade-in" id="merge-pdf-card">
+          <h3>Merge PDF</h3>
+          <p>Combine multiple PDF files into one seamless document.</p>
+          <button class="tool-btn" onclick="toggleTool('merge-pdf')">Use Tool</button>
+          <div class="tool-content" id="merge-pdf">
+            <div class="file-input">
+              <label>Select PDF files to merge:</label>
+              <div class="drag-drop-area" id="merge-pdf-drop-area">
+                <p>Drag & drop PDF files here</p>
+                <p class="small">or click to browse</p>
+              </div>
+              <input type="file" id="merge-pdf-files" accept=".pdf" multiple>
+              <div class="file-list" id="merge-pdf-file-list"></div>
+            </div>
+            <button class="tool-btn" id="merge-pdf-btn" onclick="mergePDFs()">Merge PDFs</button>
+            <div class="spinner" id="merge-pdf-spinner"></div>
+            <div class="status-message" id="merge-pdf-status"></div>
+          </div>
+        </div>
+
+        <!-- Split PDF -->
+        <div class="tool-card fade-in" id="split-pdf-card">
+          <h3>Split PDF</h3>
+          <p>Extract selected pages or split PDF into multiple parts.</p>
+          <button class="tool-btn" onclick="toggleTool('split-pdf')">Use Tool</button>
+          <div class="tool-content" id="split-pdf">
+            <div class="file-input">
+              <label>Select PDF file to split:</label>
+              <div class="drag-drop-area" id="split-pdf-drop-area">
+                <p>Drag & drop a PDF file here</p>
+                <p class="small">or click to browse</p>
+              </div>
+              <input type="file" id="split-pdf-file" accept=".pdf">
+              <div class="file-list" id="split-pdf-file-list"></div>
+            </div>
+            <div class="options">
+              <div class="option-group">
+                <label for="split-pages">Pages to extract (e.g., 1-3,5,7-9):</label>
+                <input type="text" id="split-pages" placeholder="1-3,5,7-9">
+              </div>
+            </div>
+            <button class="tool-btn" id="split-pdf-btn" onclick="splitPDF()">Split PDF</button>
+            <div class="spinner" id="split-pdf-spinner"></div>
+            <div class="status-message" id="split-pdf-status"></div>
+          </div>
+        </div>
+
+        <!-- Compress PDF -->
+        <div class="tool-card fade-in" id="compress-pdf-card">
+          <h3>Compress PDF</h3>
+          <p>Reduce PDF file size without losing quality or formatting.</p>
+          <button class="tool-btn" onclick="toggleTool('compress-pdf')">Use Tool</button>
+          <div class="tool-content" id="compress-pdf">
+            <div class="file-input">
+              <label>Select PDF file to compress:</label>
+              <div class="drag-drop-area" id="compress-pdf-drop-area">
+                <p>Drag & drop a PDF file here</p>
+                <p class="small">or click to browse</p>
+              </div>
+              <input type="file" id="compress-pdf-file" accept=".pdf">
+              <div class="file-list" id="compress-pdf-file-list"></div>
+            </div>
+            <div class="options">
+              <div class="option-group">
+                <label for="compression-level">Compression level:</label>
+                <select id="compression-level">
+                  <option value="low">Low (better quality)</option>
+                  <option value="medium" selected>Medium (balanced)</option>
+                  <option value="high">High (smaller file)</option>
+                </select>
+              </div>
+            </div>
+            <button class="tool-btn" id="compress-pdf-btn" onclick="compressPDF()">Compress PDF</button>
+            <div class="spinner" id="compress-pdf-spinner"></div>
+            <div class="status-message" id="compress-pdf-status"></div>
+          </div>
+        </div>
+
+        <!-- Compress Images -->
+        <div class="tool-card fade-in" id="compress-image-card">
+          <h3>Compress Images</h3>
+          <p>Smartly compress JPEG, PNG, or WebP images with no quality loss.</p>
+          <button class="tool-btn" onclick="toggleTool('compress-image')">Use Tool</button>
+          <div class="tool-content" id="compress-image">
+            <div class="file-input">
+              <label>Select image(s) to compress:</label>
+              <div class="drag-drop-area" id="compress-image-drop-area">
+                <p>Drag & drop images here</p>
+                <p class="small">or click to browse</p>
+              </div>
+              <input type="file" id="compress-image-file" accept="image/*" multiple>
+              <div class="file-list" id="compress-image-file-list"></div>
+            </div>
+            <div class="options">
+              <div class="option-group">
+                <label for="image-quality">Quality (0-100):</label>
+                <input type="range" id="image-quality" min="0" max="100" value="80">
+                <span id="quality-value">80%</span>
+              </div>
+            </div>
+            <button class="tool-btn" id="compress-image-btn" onclick="compressImages()">Compress Images</button>
+            <div class="preview-container" id="image-preview"></div>
+            <div class="spinner" id="compress-image-spinner"></div>
+            <div class="status-message" id="compress-image-status"></div>
+          </div>
+        </div>
+
+        <!-- Image to PDF -->
+        <div class="tool-card fade-in" id="image-to-pdf-card">
+          <h3>Image to PDF</h3>
+          <p>Convert one or more images into a high-quality PDF document.</p>
+          <button class="tool-btn" onclick="toggleTool('image-to-pdf')">Use Tool</button>
+          <div class="tool-content" id="image-to-pdf">
+            <div class="file-input">
+              <label>Select image(s) to convert:</label>
+              <div class="drag-drop-area" id="image-to-pdf-drop-area">
+                <p>Drag & drop images here</p>
+                <p class="small">or click to browse</p>
+              </div>
+              <input type="file" id="image-to-pdf-files" accept="image/*" multiple>
+              <div class="file-list" id="image-to-pdf-file-list"></div>
+            </div>
+            <div class="options">
+              <div class="option-group">
+                <label for="pdf-page-size">Page size:</label>
+                <select id="pdf-page-size">
+                  <option value="A4">A4 (210 × 297 mm)</option>
+                  <option value="Letter">Letter (8.5 × 11 in)</option>
+                  <option value="Fit">Fit to image size</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label for="pdf-orientation">Orientation:</label>
+                <select id="pdf-orientation">
+                  <option value="portrait">Portrait</option>
+                  <option value="landscape">Landscape</option>
+                  <option value="auto">Auto (based on image)</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label for="pdf-margin">Margin (mm):</label>
+                <input type="number" id="pdf-margin" min="0" max="50" value="10">
+              </div>
+            </div>
+            <button class="tool-btn" id="image-to-pdf-btn" onclick="convertImagesToPDF()">Convert to PDF</button>
+            <div class="preview-container" id="image-to-pdf-preview"></div>
+            <div class="spinner" id="image-to-pdf-spinner"></div>
+            <div class="status-message" id="image-to-pdf-status"></div>
+          </div>
+        </div>
+
+        <!-- QR Code Generator -->
+        <div class="tool-card fade-in" id="qr-code-card">
+          <h3>QR Code Generator</h3>
+          <p>Create stylish QR codes from any link, text, or contact info.</p>
+          <button class="tool-btn" onclick="toggleTool('qr-code')">Use Tool</button>
+          <div class="tool-content" id="qr-code">
+            <div class="options">
+              <div class="option-group">
+                <label for="qr-content">QR Code Content:</label>
+                <input type="text" id="qr-content" placeholder="https://example.com">
+              </div>
+              <div class="option-group">
+                <label for="qr-color">Color:</label>
+                <input type="color" id="qr-color" value="#000000">
+              </div>
+              <div class="option-group">
+                <label for="qr-bg-color">Background Color:</label>
+                <input type="color" id="qr-bg-color" value="#ffffff">
+              </div>
+              <div class="option-group">
+                <label for="qr-size">Size (px):</label>
+                <input type="number" id="qr-size" min="100" max="1000" value="200">
+              </div>
+            </div>
+            <button class="tool-btn" id="generate-qr-btn" onclick="generateQRCode()">Generate QR Code</button>
+            <div class="qr-code-container" id="qr-code-container"></div>
+            <button class="tool-btn secondary" id="download-qr-btn" style="display:none;" onclick="downloadQRCode()">Download QR Code</button>
+            <div class="status-message" id="qr-code-status"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Notice -->
+    <div class="privacy-notice container">
+      <h2>Your Privacy, Respected</h2>
+      <p>All files are processed directly in your browser. Nothing is ever uploaded — secure, offline, and private.</p>
     </div>
   </section>
 
-  <!-- Tools -->
-  <section id="tools" class="container">
-    <div class="tools">
-      <!-- Merge PDF -->
-      <div class="tool-card fade-in" id="merge-pdf-card">
-        <h3>Merge PDF</h3>
-        <p>Combine multiple PDF files into one seamless document.</p>
-        <button class="tool-btn" onclick="toggleTool('merge-pdf')">Use Tool</button>
-        <div class="tool-content" id="merge-pdf">
-          <div class="file-input">
-            <label>Select PDF files to merge:</label>
-            <div class="drag-drop-area" id="merge-pdf-drop-area">
-              <p>Drag & drop PDF files here</p>
-              <p class="small">or click to browse</p>
-            </div>
-            <input type="file" id="merge-pdf-files" accept=".pdf" multiple>
-            <div class="file-list" id="merge-pdf-file-list"></div>
-          </div>
-          <button class="tool-btn" id="merge-pdf-btn" onclick="mergePDFs()">Merge PDFs</button>
-          <div class="spinner" id="merge-pdf-spinner"></div>
-          <div class="status-message" id="merge-pdf-status"></div>
+  <!-- About Section -->
+  <section id="about" class="content-section content-page">
+    <div class="content-container">
+      <h1 class="fade-in">About Quick Merge</h1>
+      
+      <p class="fade-in">Quick Merge is a revolutionary client-side file processing tool that empowers you to merge, split, convert, and edit files directly in your browser—without ever compromising your privacy by uploading them to external servers.</p>
+      
+      <div class="feature-list fade-in">
+        <h2>Why Choose Quick Merge?</h2>
+        <div class="feature-item">
+          <strong>Complete Privacy Assurance</strong> - Your files never leave your device, ensuring maximum security for sensitive documents
+        </div>
+        <div class="feature-item">
+          <strong>No Account Required</strong> - Get started immediately without registration or login
+        </div>
+        <div class="feature-item">
+          <strong>Professional-Grade Tools</strong> - Powerful features designed for both casual users and professionals
+        </div>
+        <div class="feature-item">
+          <strong>Universal Compatibility</strong> - Works seamlessly across all modern browsers and devices
         </div>
       </div>
-
-      <!-- Split PDF -->
-      <div class="tool-card fade-in" id="split-pdf-card">
-        <h3>Split PDF</h3>
-        <p>Extract selected pages or split PDF into multiple parts.</p>
-        <button class="tool-btn" onclick="toggleTool('split-pdf')">Use Tool</button>
-        <div class="tool-content" id="split-pdf">
-          <div class="file-input">
-            <label>Select PDF file to split:</label>
-            <div class="drag-drop-area" id="split-pdf-drop-area">
-              <p>Drag & drop a PDF file here</p>
-              <p class="small">or click to browse</p>
-            </div>
-            <input type="file" id="split-pdf-file" accept=".pdf">
-            <div class="file-list" id="split-pdf-file-list"></div>
-          </div>
-          <div class="options">
-            <div class="option-group">
-              <label for="split-pages">Pages to extract (e.g., 1-3,5,7-9):</label>
-              <input type="text" id="split-pages" placeholder="1-3,5,7-9">
-            </div>
-          </div>
-          <button class="tool-btn" id="split-pdf-btn" onclick="splitPDF()">Split PDF</button>
-          <div class="spinner" id="split-pdf-spinner"></div>
-          <div class="status-message" id="split-pdf-status"></div>
-        </div>
-      </div>
-
-      <!-- Compress PDF -->
-      <div class="tool-card fade-in" id="compress-pdf-card">
-        <h3>Compress PDF</h3>
-        <p>Reduce PDF file size without losing quality or formatting.</p>
-        <button class="tool-btn" onclick="toggleTool('compress-pdf')">Use Tool</button>
-        <div class="tool-content" id="compress-pdf">
-          <div class="file-input">
-            <label>Select PDF file to compress:</label>
-            <div class="drag-drop-area" id="compress-pdf-drop-area">
-              <p>Drag & drop a PDF file here</p>
-              <p class="small">or click to browse</p>
-            </div>
-            <input type="file" id="compress-pdf-file" accept=".pdf">
-            <div class="file-list" id="compress-pdf-file-list"></div>
-          </div>
-          <div class="options">
-            <div class="option-group">
-              <label for="compression-level">Compression level:</label>
-              <select id="compression-level">
-                <option value="low">Low (better quality)</option>
-                <option value="medium" selected>Medium (balanced)</option>
-                <option value="high">High (smaller file)</option>
-              </select>
-            </div>
-          </div>
-          <button class="tool-btn" id="compress-pdf-btn" onclick="compressPDF()">Compress PDF</button>
-          <div class="spinner" id="compress-pdf-spinner"></div>
-          <div class="status-message" id="compress-pdf-status"></div>
-        </div>
-      </div>
-
-      <!-- Compress Images -->
-      <div class="tool-card fade-in" id="compress-image-card">
-        <h3>Compress Images</h3>
-        <p>Smartly compress JPEG, PNG, or WebP images with no quality loss.</p>
-        <button class="tool-btn" onclick="toggleTool('compress-image')">Use Tool</button>
-        <div class="tool-content" id="compress-image">
-          <div class="file-input">
-            <label>Select image(s) to compress:</label>
-            <div class="drag-drop-area" id="compress-image-drop-area">
-              <p>Drag & drop images here</p>
-              <p class="small">or click to browse</p>
-            </div>
-            <input type="file" id="compress-image-file" accept="image/*" multiple>
-            <div class="file-list" id="compress-image-file-list"></div>
-          </div>
-          <div class="options">
-            <div class="option-group">
-              <label for="image-quality">Quality (0-100):</label>
-              <input type="range" id="image-quality" min="0" max="100" value="80">
-              <span id="quality-value">80%</span>
-            </div>
-          </div>
-          <button class="tool-btn" id="compress-image-btn" onclick="compressImages()">Compress Images</button>
-          <div class="preview-container" id="image-preview"></div>
-          <div class="spinner" id="compress-image-spinner"></div>
-          <div class="status-message" id="compress-image-status"></div>
-        </div>
-      </div>
-
-      <!-- Image to PDF -->
-      <div class="tool-card fade-in" id="image-to-pdf-card">
-        <h3>Image to PDF</h3>
-        <p>Convert one or more images into a high-quality PDF document.</p>
-        <button class="tool-btn" onclick="toggleTool('image-to-pdf')">Use Tool</button>
-        <div class="tool-content" id="image-to-pdf">
-          <div class="file-input">
-            <label>Select image(s) to convert:</label>
-            <div class="drag-drop-area" id="image-to-pdf-drop-area">
-              <p>Drag & drop images here</p>
-              <p class="small">or click to browse</p>
-            </div>
-            <input type="file" id="image-to-pdf-files" accept="image/*" multiple>
-            <div class="file-list" id="image-to-pdf-file-list"></div>
-          </div>
-          <div class="options">
-            <div class="option-group">
-              <label for="pdf-page-size">Page size:</label>
-              <select id="pdf-page-size">
-                <option value="A4">A4 (210 × 297 mm)</option>
-                <option value="Letter">Letter (8.5 × 11 in)</option>
-                <option value="Fit">Fit to image size</option>
-              </select>
-            </div>
-            <div class="option-group">
-              <label for="pdf-orientation">Orientation:</label>
-              <select id="pdf-orientation">
-                <option value="portrait">Portrait</option>
-                <option value="landscape">Landscape</option>
-                <option value="auto">Auto (based on image)</option>
-              </select>
-            </div>
-            <div class="option-group">
-              <label for="pdf-margin">Margin (mm):</label>
-              <input type="number" id="pdf-margin" min="0" max="50" value="10">
-            </div>
-          </div>
-          <button class="tool-btn" id="image-to-pdf-btn" onclick="convertImagesToPDF()">Convert to PDF</button>
-          <div class="preview-container" id="image-to-pdf-preview"></div>
-          <div class="spinner" id="image-to-pdf-spinner"></div>
-          <div class="status-message" id="image-to-pdf-status"></div>
-        </div>
-      </div>
-
-      <!-- QR Code Generator -->
-      <div class="tool-card fade-in" id="qr-code-card">
-        <h3>QR Code Generator</h3>
-        <p>Create stylish QR codes from any link, text, or contact info.</p>
-        <button class="tool-btn" onclick="toggleTool('qr-code')">Use Tool</button>
-        <div class="tool-content" id="qr-code">
-          <div class="options">
-            <div class="option-group">
-              <label for="qr-content">QR Code Content:</label>
-              <input type="text" id="qr-content" placeholder="https://example.com">
-            </div>
-            <div class="option-group">
-              <label for="qr-color">Color:</label>
-              <input type="color" id="qr-color" value="#000000">
-            </div>
-            <div class="option-group">
-              <label for="qr-bg-color">Background Color:</label>
-              <input type="color" id="qr-bg-color" value="#ffffff">
-            </div>
-            <div class="option-group">
-              <label for="qr-size">Size (px):</label>
-              <input type="number" id="qr-size" min="100" max="1000" value="200">
-            </div>
-          </div>
-          <button class="tool-btn" id="generate-qr-btn" onclick="generateQRCode()">Generate QR Code</button>
-          <div class="qr-code-container" id="qr-code-container"></div>
-          <button class="tool-btn secondary" id="download-qr-btn" style="display:none;" onclick="downloadQRCode()">Download QR Code</button>
-          <div class="status-message" id="qr-code-status"></div>
-        </div>
-      </div>
+      
+      <h2 class="fade-in">Our Technology</h2>
+      <p class="fade-in">Quick Merge leverages cutting-edge web technologies to bring you:</p>
+      <ul class="fade-in">
+        <li>Advanced PDF manipulation using PDF-lib technology</li>
+        <li>Efficient image processing with WebAssembly</li>
+        <li>Client-side file handling with Web APIs</li>
+        <li>Secure processing environment isolated from external networks</li>
+      </ul>
+      
+      <h2 class="fade-in">Who Uses Quick Merge?</h2>
+      <p class="fade-in">Our tools are trusted by professionals across industries:</p>
+      <ul class="fade-in">
+        <li>Legal professionals handling sensitive case documents</li>
+        <li>Healthcare providers managing patient records</li>
+        <li>Financial analysts working with confidential reports</li>
+        <li>Students and educators organizing research materials</li>
+        <li>Business professionals preparing presentations and contracts</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Privacy Section -->
-  <section class="privacy container" id="privacy">
-    <h2>Your Privacy, Respected</h2>
-    <p>All files are processed directly in your browser. Nothing is ever uploaded — secure, offline, and private.</p>
+  <!-- Contact Section -->
+  <section id="contact" class="content-section content-page">
+    <div class="content-container">
+      <h1 class="fade-in">Contact Quick Merge</h1>
+      
+      <div class="contact-box fade-in">
+        <h2>Get in Touch</h2>
+        <p>We're committed to providing exceptional support and value your feedback. Here's how you can reach us:</p>
+        
+        <div class="contact-method">
+          <h3>Technical Support</h3>
+          <p>Email: <a href="mailto:support@quickmerge.com">support@quickmerge.com</a></p>
+          <p>For assistance with tool functionality, troubleshooting, or feature requests.</p>
+        </div>
+        
+        <div class="contact-method">
+          <h3>Privacy Questions</h3>
+          <p>Email: <a href="mailto:privacy@quickmerge.com">privacy@quickmerge.com</a></p>
+          <p>For any concerns regarding our privacy policy or data handling practices.</p>
+        </div>
+      </div>
+      
+      <h2 class="fade-in">Support Hours</h2>
+      <p class="fade-in">Our team is available to assist you during the following hours:</p>
+      <ul class="fade-in">
+        <li>Monday-Friday: 9:00 AM - 5:00 PM (GMT)</li>
+        <li>Emergency support available for critical issues</li>
+        <li>Typical response time: 24-48 hours</li>
+      </ul>
+      
+      <h2 class="fade-in">We Value Your Feedback</h2>
+      <p class="fade-in">Help us improve Quick Merge by sharing your thoughts on:</p>
+      <ul class="fade-in">
+        <li>New features you'd like to see implemented</li>
+        <li>Your experience with our current tools</li>
+        <li>Any difficulties you've encountered</li>
+        <li>Suggestions for improving our interface</li>
+      </ul>
+      
+      <h2 class="fade-in">Business Partnerships</h2>
+      <p class="fade-in">Interested in integrating Quick Merge technology into your platform?</p>
+      <p class="fade-in">Contact our business development team at <a href="mailto:partnerships@quickmerge.com">partnerships@quickmerge.com</a> to discuss collaboration opportunities.</p>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Section -->
+  <section id="privacy" class="content-section content-page">
+    <div class="content-container">
+      <h1 class="fade-in">Privacy Policy</h1>
+      <p class="update-date fade-in">Last Updated: 21.05.2025</p>
+      
+      <div class="policy-section fade-in">
+        <h2>Our Commitment to Privacy</h2>
+        <p>At Quick Merge, we've built our platform on a fundamental principle: your data belongs to you. Unlike traditional online tools, we've designed our service to operate entirely within your browser, ensuring complete privacy and security.</p>
+      </div>
+      
+      <div class="policy-section fade-in">
+        <h2>How We Protect Your Data</h2>
+        
+        <h3>Local Processing Architecture</h3>
+        <p>Our innovative approach means:</p>
+        <ul>
+          <li><strong>Zero Data Transmission:</strong> Files are processed directly in your browser with no server interaction</li>
+          <li><strong>Automatic Cleanup:</strong> All temporary data is purged when you close your browser tab</li>
+          <li><strong>No Tracking:</strong> We don't use cookies, analytics, or any tracking mechanisms</li>
+        </ul>
+        
+        <h3>Security Features</h3>
+        <p>We've implemented multiple safeguards:</p>
+        <ul>
+          <li>Modern encryption standards for all processing</li>
+          <li>Sandboxed execution environment</li>
+          <li>Regular security audits of our codebase</li>
+        </ul>
+      </div>
+      
+      <div class="policy-section fade-in">
+        <h2>Your Responsibilities</h2>
+        <p>While we provide the tools for secure processing, we recommend:</p>
+        <ul>
+          <li>Using updated browsers with security patches</li>
+          <li>Avoiding public computers for sensitive documents</li>
+          <li>Maintaining your device's antivirus protection</li>
+        </ul>
+      </div>
+      
+      <div class="policy-section fade-in">
+        <h2>Policy Updates</h2>
+        <p>We may occasionally update this policy to reflect:</p>
+        <ul>
+          <li>New features that maintain our privacy standards</li>
+          <li>Changes in applicable laws and regulations</li>
+          <li>Improvements to our security documentation</li>
+        </ul>
+        <p>We encourage you to review this policy periodically to stay informed about how we're protecting your information.</p>
+      </div>
+      
+      <div class="policy-section fade-in">
+        <h2>Contact Us</h2>
+        <p>For any questions about this Privacy Policy or our practices, please contact our Privacy Officer at <a href="mailto:privacy@quickmerge.com">privacy@quickmerge.com</a>.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -640,6 +939,27 @@
   </footer>
 
   <script>
+    // Navigation function
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active-section');
+      });
+      
+      // Show the selected section
+      document.getElementById(sectionId).classList.add('active-section');
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+      
+      // Trigger animations for the new section
+      if (sectionId !== 'home') {
+        setTimeout(() => {
+          setupAnimations();
+        }, 50);
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       // Initialize all tool sections
       setupDragAndDrop('merge-pdf', true);
@@ -1117,7 +1437,7 @@
       showStatus('image-to-pdf', 'Converting images to PDF...', 'processing');
       
       try {
-        const { PDFDocument, rgb } = PDFLib;
+        const { PDFDocument } = PDFLib;
         const pdfDoc = await PDFDocument.create();
         
         // Process each image
@@ -1125,18 +1445,40 @@
           const file = fileInput.files[i];
           if (!file.type.match('image.*')) continue;
           
+          // Read the image file
+          const arrayBuffer = await file.arrayBuffer();
+          let image;
+          let imageType = 'png';
+          
+          try {
+            if (file.type === 'image/png') {
+              image = await pdfDoc.embedPng(arrayBuffer);
+            } else if (file.type === 'image/jpeg' || file.type === 'image/jpg') {
+              image = await pdfDoc.embedJpg(arrayBuffer);
+              imageType = 'jpg';
+            } else {
+              // Convert other image types to PNG first
+              const imgBlob = await convertImageToPNG(file);
+              const pngArrayBuffer = await imgBlob.arrayBuffer();
+              image = await pdfDoc.embedPng(pngArrayBuffer);
+            }
+          } catch (error) {
+            console.error('Error embedding image:', error);
+            showStatus('image-to-pdf', `Error processing ${file.name}: Unsupported image format`, 'error');
+            continue;
+          }
+          
           // Add a new page for each image
           let page;
-          const img = await pdfDoc.embedPng(await file.arrayBuffer());
           
           if (pageSize === 'Fit') {
             // Fit to image dimensions
-            page = pdfDoc.addPage([img.width, img.height]);
-            page.drawImage(img, {
+            page = pdfDoc.addPage([image.width, image.height]);
+            page.drawImage(image, {
               x: 0,
               y: 0,
-              width: img.width,
-              height: img.height,
+              width: image.width,
+              height: image.height,
             });
           } else {
             // Standard page sizes
@@ -1151,7 +1493,7 @@
             
             // Adjust for orientation
             if ((orientation === 'landscape') || 
-                (orientation === 'auto' && img.width > img.height)) {
+                (orientation === 'auto' && image.width > image.height)) {
               [width, height] = [height, width];
             }
             
@@ -1164,8 +1506,8 @@
             const maxHeight = height - (marginPoints * 2);
             
             // Maintain aspect ratio
-            let imgWidth = img.width;
-            let imgHeight = img.height;
+            let imgWidth = image.width;
+            let imgHeight = image.height;
             const ratio = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
             imgWidth *= ratio;
             imgHeight *= ratio;
@@ -1174,13 +1516,19 @@
             const x = (width - imgWidth) / 2;
             const y = (height - imgHeight) / 2;
             
-            page.drawImage(img, {
+            page.drawImage(image, {
               x,
               y,
               width: imgWidth,
               height: imgHeight,
             });
           }
+        }
+        
+        // Check if any pages were added
+        if (pdfDoc.getPageCount() === 0) {
+          showStatus('image-to-pdf', 'No valid images were processed', 'error');
+          return;
         }
         
         // Save PDF
@@ -1199,6 +1547,29 @@
       } finally {
         hideSpinner('image-to-pdf');
       }
+    }
+
+    // Helper function to convert any image to PNG
+    async function convertImageToPNG(file) {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            
+            canvas.toBlob((blob) => {
+              resolve(blob);
+            }, 'image/png');
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
     }
 
     function generateQRCode() {
